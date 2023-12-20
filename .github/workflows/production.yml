@@ -34,8 +34,11 @@ jobs:
           ls -la
 
       - name: "Packer validate"
-        run: packer validate ./packer/
+        run: packer validate .
+        working-directory: ./packer/
+
 
       - name: "Packer build ami"
-        run: packer build ./packer/
+        run: packer build .
+        working-directory: ./packer/
 
