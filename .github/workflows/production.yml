@@ -15,21 +15,22 @@ jobs:
       AWS_DEFAULT_REGION: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       packer_version: "1.9.4"
 
-  steps:
-    - name: "Repository Checkout"
-      uses: actions/checkout@v3
+    steps:
+      - name: "Repository Checkout"
+        uses: actions/checkout@v3
 
-    - name: "Packer installation"
-      uses: hashicorp/setup-packer@main
-      with:
-        version: ${{ env.packer_version }}
+      - name: "Packer installation"
+        uses: hashicorp/setup-packer@main
+        with:
+          version: ${{ env.packer_version }}
 
-    - name: "Packer init"
-      run: packer init .
-      working-directory: ./packer/
+      - name: "Packer init"
+        run: packer init .
+        working-directory: ./packer/
 
-    - name: "Packer validate"
-      run: packer validate ./packer/
+      - name: "Packer validate"
+        run: packer validate ./packer/
 
-    - name: "Packer build ami"
-      run: packer build ./packer/
+      - name: "Packer build ami"
+        run: packer build ./packer/
+
