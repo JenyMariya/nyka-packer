@@ -15,17 +15,14 @@ build {
 
   sources = ["source.amazon-ebs.ami"]
 
-  provisioner "shell" {
-    script = "./setup.sh"
-    execute_command = "sudo  {{.Path}}"
-  }
-
   provisioner "file" {
     source = "../website"
     destination = "/tmp/"
   }
 
   provisioner "shell" {
-    inline = ["sudo cp -r /tmp/website/* /var/www/html/","sudo rm -rf /tmp/website","sudo chown -R apache:apache /var/www/hmtl/"]
+    script = "./setup.sh"
+    execute_command = "sudo  {{.Path}}"
   }
-}
+
+
