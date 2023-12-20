@@ -25,4 +25,4 @@ build {
     execute_command = "sudo  {{.Path}}"
   }
 
-
+}
