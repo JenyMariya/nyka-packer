@@ -1,5 +1,5 @@
 variable "ami"{
-  default = "ami-0a0f1259dd1c90938"
+  default = "ami-02e94b011299ef128"
 }
 
 variable "project"{
