@@ -12,5 +12,5 @@ variable "env"{
 
 locals {
     image-timestamp = "${formatdate("DD-MMM-YYYY-hh-mm", timestamp())}"
-    image-name = "${var.project}-${var.env}-${local.image-timestamp}"
+    image_name = "${var.project}-${var.env}-${local.image-timestamp}"
 }
