@@ -13,7 +13,7 @@ source "amazon-ebs" "ami" {
 
 build {
 
-  sources = ["amazon-ebs.ami"]
+  sources = ["source.amazon-ebs.ami"]
 
   provisioner "file" {
     source = "../website"
