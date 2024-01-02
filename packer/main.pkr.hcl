@@ -1,7 +1,7 @@
 source "amazon-ebs" "ami" {
   ami_name = local.image_name
   source_ami = var.ami
-  instance_type = "t2-micro"
+  instance_type = var.instance_type
   ssh_username = "ec2-user"
   tags = {
       Name = local.image_name
